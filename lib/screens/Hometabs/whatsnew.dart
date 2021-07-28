@@ -202,8 +202,8 @@ class _WhatsNewState extends State<WhatsNew> {
                           .replaceAll("localhost", "192.168.1.20:80");
                     }
 
-                    // print(post1.featuredImage.contains("localhost"));
-                    // print(post2.featuredImage.contains("localhost"));
+                    // change image domain server from localhost to your pc ip
+                    // this make photo appear on image asset 
 
                     return Column(
                       crossAxisAlignment: CrossAxisAlignment.start,

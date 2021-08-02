@@ -114,6 +114,7 @@ class _RegisterState extends State<Register> {
                   var response =
                       await authinticationAPI.register(name, email, password);
                   print(response);
+                  //show response result 
                    setState(() {
                     isLoading = false;
                   });

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:newsapp/models/nav_menu.dart';
 import 'package:newsapp/screens/entry.dart';
-import 'package:newsapp/screens/home_screen.dart';
 import 'package:newsapp/screens/threedot_pages/regisetr.dart';
 import 'package:newsapp/screens/threedot_pages/sendpost.dart';
 import 'package:newsapp/screens/threedot_pages/login.dart';

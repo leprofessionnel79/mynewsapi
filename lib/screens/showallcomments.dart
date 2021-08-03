@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:newsapp/api/comment_api.dart';
 import 'package:newsapp/api/posts_api.dart';
-//import 'package:newsapp/models/post.dart';
 import 'package:newsapp/utilities/data_handls.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:newsapp/models/post_data.dart';
 
-import 'Hometabs/popular.dart';
 
 class ShowAllComments extends StatefulWidget {
   final Post post;

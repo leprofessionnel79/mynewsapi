@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:newsapp/screens/entry.dart';
-import 'package:newsapp/screens/home_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../page_view_model.dart';
 import 'package:page_view_indicator/page_view_indicator.dart';

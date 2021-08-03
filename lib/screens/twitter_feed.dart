@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:newsapp/screens/home_screen.dart';
-import 'package:newsapp/screens/instagram_feed.dart';
-import 'package:newsapp/screens/threedot_pages/sendpost.dart';
 import 'package:newsapp/shared_ui/naigation_drawer.dart';
 
 class TwitterFeed extends StatefulWidget {
@@ -10,7 +7,7 @@ class TwitterFeed extends StatefulWidget {
 }
 
 class _TwitterFeedState extends State<TwitterFeed> {
-  int _currentIndex = 1;
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -164,13 +161,13 @@ class _TwitterFeedState extends State<TwitterFeed> {
           ),
           Row(
             children: [
-              FlatButton(
+              TextButton(
                   onPressed: () {},
                   child: Text(
                     'SHARE',
                     style: TextStyle(color: Colors.orange),
                   )),
-              FlatButton(
+              TextButton(
                   onPressed: () {},
                   child: Text(
                     'OPEN',

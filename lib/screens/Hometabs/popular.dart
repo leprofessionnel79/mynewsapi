@@ -14,7 +14,7 @@ class Popular extends StatefulWidget {
 class _PopularState extends State<Popular> with AutomaticKeepAliveClientMixin {
   @override
   void dispose() {
-    // TODO: implement dispose
+   
 
     refreshController.dispose();
 
@@ -109,7 +109,7 @@ class _PopularState extends State<Popular> with AutomaticKeepAliveClientMixin {
             },
             child: ListView.builder(
               itemBuilder: (context, index) {
-                final post = posts[index];
+               
                 return Card(
                   child: _drawSingleRow(posts[index]),
                 );
@@ -189,6 +189,6 @@ class _PopularState extends State<Popular> with AutomaticKeepAliveClientMixin {
   }
 
   @override
-  // TODO: implement wantKeepAlive
+  
   bool get wantKeepAlive => true;
 }

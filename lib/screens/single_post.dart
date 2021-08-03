@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:newsapp/api/comment_api.dart';
 import 'package:newsapp/api/posts_api.dart';
-//import 'package:newsapp/models/post.dart';
 import 'package:newsapp/screens/showallcomments.dart';
-import 'package:newsapp/utilities/data_handls.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter/widgets.dart';
 import 'package:newsapp/models/post_data.dart';
@@ -41,7 +38,7 @@ class _SinglePostState extends State<SinglePost> {
 
   @override
   void initState() {
-    // TODO: implement initState
+   
     super.initState();
     _commentController = TextEditingController();
     _checkToken();
@@ -147,7 +144,7 @@ class _SinglePostState extends State<SinglePost> {
                     ),
                   ),
                 ),
-                FlatButton(
+                TextButton(
                     onPressed: () async {
                       if (_formKeycomment.currentState.validate()) {
                         setState(() {
@@ -191,11 +188,5 @@ class _SinglePostState extends State<SinglePost> {
     );
   }
 
-  Widget _drawLoading() {
-    return Container(
-      child: Center(
-        child: CircularProgressIndicator(),
-      ),
-    );
-  }
+  
 }

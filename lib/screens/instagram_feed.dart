@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:newsapp/screens/home_screen.dart';
-import 'package:newsapp/screens/threedot_pages/sendpost.dart';
-import 'package:newsapp/screens/twitter_feed.dart';
 import 'package:newsapp/shared_ui/naigation_drawer.dart';
 
 class InstaGramFeed extends StatefulWidget {
@@ -12,7 +9,7 @@ class InstaGramFeed extends StatefulWidget {
 class _InstaGramFeedState extends State<InstaGramFeed> {
   TextStyle _hashtagStyle = TextStyle(color: Colors.orange);
 
-  int _currentIndex = 2;
+
 
   @override
   Widget build(BuildContext context) {
@@ -173,7 +170,7 @@ class _InstaGramFeedState extends State<InstaGramFeed> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        FlatButton(
+        TextButton(
             onPressed: () {},
             child: Text(
               '10 COMMENTS',
@@ -181,13 +178,13 @@ class _InstaGramFeedState extends State<InstaGramFeed> {
             )),
         Row(
           children: [
-            FlatButton(
+            TextButton(
                 onPressed: () {},
                 child: Text(
                   'SHARE',
                   style: _hashtagStyle,
                 )),
-            FlatButton(
+            TextButton(
                 onPressed: () {},
                 child: Text(
                   'OPEN',
@@ -203,19 +200,19 @@ class _InstaGramFeedState extends State<InstaGramFeed> {
     return Container(
       child: Wrap(
         children: [
-          FlatButton(
+          TextButton(
               onPressed: () {},
               child: Text(
                 '#advance',
                 style: _hashtagStyle,
               )),
-          FlatButton(
+          TextButton(
               onPressed: () {},
               child: Text(
                 '#advance',
                 style: _hashtagStyle,
               )),
-          FlatButton(
+          TextButton(
               onPressed: () {},
               child: Text(
                 '#advance',

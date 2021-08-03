@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:newsapp/api/authintication.dart';
-import 'package:newsapp/screens/home_screen.dart';
 import 'package:newsapp/screens/threedot_pages/login.dart';
 
 class Register extends StatefulWidget {

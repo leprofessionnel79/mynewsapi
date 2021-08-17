@@ -56,9 +56,7 @@ class _SinglePostState extends State<SinglePost> {
   Widget build(BuildContext context) {
     return Scaffold(
       
-      appBar: AppBar(
-        toolbarHeight: 30,
-      ),
+      
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

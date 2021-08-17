@@ -4,27 +4,22 @@ import 'package:newsapp/api/posts_api.dart';
 import 'package:newsapp/utilities/data_handls.dart';
 import 'package:newsapp/models/post_data.dart';
 
-
 class ShowAllComments extends StatefulWidget {
   final Post post;
 
   ShowAllComments(this.post);
-  
-  
- 
 
   @override
   _ShowAllCommentsState createState() => _ShowAllCommentsState();
 }
 
 class _ShowAllCommentsState extends State<ShowAllComments> {
-   PostsAPI postsAPI = PostsAPI();
+  PostsAPI postsAPI = PostsAPI();
   @override
   Widget build(BuildContext context) {
-    
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 30,
+        toolbarHeight: 40,
       ),
       body: _drawFutureComment(),
     );
@@ -67,7 +62,9 @@ class _ShowAllCommentsState extends State<ShowAllComments> {
               Row(
                 children: [
                   CircleAvatar(
-                    backgroundImage: NetworkImage(comment.author.avatar==null?'assets/images/ph.jpg':comment.author.avatar),
+                    backgroundImage: NetworkImage(comment.author.avatar == null
+                        ? 'assets/images/ph.jpg'
+                        : comment.author.avatar),
                   ),
                   SizedBox(
                     width: 14,

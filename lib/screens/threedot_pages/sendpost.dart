@@ -149,6 +149,7 @@ class _SendPostState extends State<SendPost> {
           ),
           SizedBox(
             width: double.infinity,
+            // ignore: deprecated_member_use
             child: RaisedButton(
               color: Colors.red[800],
               onPressed: () async {

@@ -55,6 +55,7 @@ class _SinglePostState extends State<SinglePost> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
       appBar: AppBar(
         toolbarHeight: 30,
       ),
@@ -109,6 +110,7 @@ class _SinglePostState extends State<SinglePost> {
 
   Widget _drawPostImage() {
     return Container(
+     
       width: double.infinity,
       height: 300,
       decoration: BoxDecoration(

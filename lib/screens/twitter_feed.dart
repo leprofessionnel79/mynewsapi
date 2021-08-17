@@ -11,46 +11,6 @@ class _TwitterFeedState extends State<TwitterFeed> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // bottomNavigationBar: BottomNavigationBar(
-      //   type: BottomNavigationBarType.fixed,
-      //   currentIndex: _currentIndex,
-      //   backgroundColor: Colors.white,
-      //   onTap: (index) {
-      //     setState(() {
-      //       _currentIndex = index;
-      //     });
-
-      //     switch (_currentIndex) {
-      //       case 0:
-      //          Navigator.push(
-      //             context, MaterialPageRoute(builder: (context) => HomeScreen()));
-      //         break;
-      //       case 1:
-      //          Navigator.push(context,
-      //             MaterialPageRoute(builder: (context) => TwitterFeed()));
-      //         break;
-
-      //       case 2:
-      //          Navigator.push(context,
-      //             MaterialPageRoute(builder: (context) => InstaGramFeed()));
-      //         break;
-      //     }
-      //   },
-      //   items: [
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.home),
-      //       label: "Home",
-      //     ),
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.person),
-      //       label: "Twitter",
-      //     ),
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.logout),
-      //       label: "Instagram",
-      //     ),
-      //   ],
-      // ),
       appBar: AppBar(
         title: Text('Twitter Feeds'),
         centerTitle: false,

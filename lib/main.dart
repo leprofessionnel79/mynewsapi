@@ -5,6 +5,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'screens/OnBoarding.dart';
 
 void main() async {
+  SharedPreferences.setMockInitialValues({});
   WidgetsFlutterBinding.ensureInitialized();
   SharedPreferences prefs = await SharedPreferences.getInstance();
   bool seen = prefs.getBool('seen');

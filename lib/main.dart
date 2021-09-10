@@ -5,16 +5,23 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'screens/OnBoarding.dart';
 
 void main() async {
-  SharedPreferences.setMockInitialValues({});
-  WidgetsFlutterBinding.ensureInitialized();
+ WidgetsFlutterBinding.ensureInitialized();
+ Widget _screen;
+  
   SharedPreferences prefs = await SharedPreferences.getInstance();
   bool seen = prefs.getBool('seen');
-  Widget _screen = OnBoarding();
+   _screen = OnBoarding();
   if (seen == null || seen == false) {
     _screen = OnBoarding();
   } else {
     _screen = Entry();
   }
+
+  //SharedPreferences.setMockInitialValues({});
+  
+  
+
+   
 
   runApp(NewsApp(_screen));
 }

@@ -1,4 +1,5 @@
-import 'package:newsapp/models/author.dart';
+import 'package:newsapp/models/post_data.dart';
+
 
 class Comment {
   String id;
@@ -9,7 +10,7 @@ class Comment {
   String user_name;
   int userId;
   int postId;
-  Author author;
+  User author;
 
   Comment({
     this.id,

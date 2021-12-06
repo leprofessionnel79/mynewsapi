@@ -42,12 +42,16 @@ class _ShowAllCommentsState extends State<ShowAllComments> {
             break;
           case ConnectionState.done:
             List<Comment> comments = snapShot.data;
+             
             return ListView.builder(
                 itemCount: comments.length,
+               
                 itemBuilder: (context, index) =>
                     Card(child: _comments(comments[index])));
+                   
         }
         print("comment is empty");
+         
         return commentListstatus();
       },
     );

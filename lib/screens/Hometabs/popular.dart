@@ -40,7 +40,7 @@ class _PopularState extends State<Popular> with AutomaticKeepAliveClientMixin {
     }
 
     final Uri uri = Uri.parse(
-        "http://192.168.1.20/newsapi/public/api/posts/categories/1?page=$currentPage");
+        "https://newsapi77.000webhostapp.com/api/posts/categories/1?page=$currentPage");
 
     final response = await http.get(uri);
 

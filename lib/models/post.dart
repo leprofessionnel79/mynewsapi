@@ -1,4 +1,5 @@
 import 'package:newsapp/models/author.dart';
+import 'package:newsapp/models/post_data.dart';
 
 class Post {
   String id;
@@ -11,7 +12,7 @@ class Post {
   int votesDown;
   int userId;
   int categoryId;
-  Author author;
+  User user;
 
   Post({
     this.id,
@@ -24,6 +25,6 @@ class Post {
     this.votesDown,
     this.userId,
     this.categoryId,
-    this.author
+    this.user
   });
 }

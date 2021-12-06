@@ -19,10 +19,6 @@ void main() async {
 
   //SharedPreferences.setMockInitialValues({});
   
-  
-
-   
-
   runApp(NewsApp(_screen));
 }
 

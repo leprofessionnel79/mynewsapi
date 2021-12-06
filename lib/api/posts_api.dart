@@ -1,43 +1,70 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:newsapp/models/author.dart';
-//import 'package:newsapp/models/post.dart';
-import 'package:newsapp/utilities/api_utilties.dart';
 import 'package:newsapp/models/post_data.dart';
+import 'dart:async';
+import 'package:newsapp/utilities/api_utilties.dart';
 import 'comment_api.dart';
 
 class PostsAPI {
   Future<List<Post>> fetchPostsByCategoryID(String id) async {
-    String WhatsNewAPI = base_api + categories_api + id;
     List<Post> posts = [];
+    String WhatsNewAPI = base_api + categories_api + id;
+
+    var response = await http.get(WhatsNewAPI);
+    //await Future.delayed(Duration(seconds: 3));
+
+    if (response.statusCode == 200) {
+      var jsondata = jsonDecode(response.body);
+      var data = jsondata["data"];
+
+      for (var item in data) {
+        Post post = new Post(
+            id: item['id'],
+            title: item['title'].toString(),
+            content: item['content'].toString(),
+            featuredImage: item['featured_image'].toString(),
+            dateWritten: item['date_written'].toString(),
+            votesUp: item['votes_up'],
+            votesDown: item['votes_down'],
+            userId: item['user_id'],
+            categoryId: item['category_id'],
+            user: User.fromJson(item['user']));
+
+        posts.add(post);
+      }
+    }
+
+    return posts;
+  }
+
+  Stream<List<Post>> stfetchPostsByCategoryID(String id) async* {
+    List<Post> posts = [];
+    String WhatsNewAPI = base_api + categories_api + id;
 
     var response = await http.get(WhatsNewAPI);
 
     if (response.statusCode == 200) {
       var jsondata = jsonDecode(response.body);
       var data = jsondata["data"];
-      
 
       for (var item in data) {
         Post post = new Post(
-          id: item['id'],
-          title: item['title'].toString(),
-          content: item['content'].toString(),
-          featuredImage: item['featured_image'].toString(),
-          dateWritten: item['date_written'].toString(),
-          votesUp: item['votes_up'],
-          votesDown: item['votes_down'],
-          userId: item['user_id'],       
-          categoryId: item['category_id'],
-          user: User.fromJson(item['user']),
-        );
-        
-        
+            id: item['id'],
+            title: item['title'].toString(),
+            content: item['content'].toString(),
+            featuredImage: item['featured_image'].toString(),
+            dateWritten: item['date_written'].toString(),
+            votesUp: item['votes_up'],
+            votesDown: item['votes_down'],
+            userId: item['user_id'],
+            categoryId: item['category_id'],
+            user: User.fromJson(item['user']));
+
         posts.add(post);
       }
     }
-    
-    return posts;
+
+    yield posts;
   }
 
   Future sendpost(String title, String content, String category_id,
@@ -95,6 +122,7 @@ class PostsAPI {
     var response = await http.get(PostCommentAPI);
 
     if (response.statusCode == 200) {
+      
       var jsondata = jsonDecode(response.body);
       var data = jsondata["data"];
 
@@ -106,11 +134,13 @@ class PostsAPI {
             userId: item['user_id'],
             user_name: item['user_name'],
             postId: item['post_id'],
-            author: Author.fromJson(item['user']));
+            author: User.fromJson(item['user']));
 
         comments.add(comment);
+        print('here');
       }
     }
+
     return comments;
   }
 }

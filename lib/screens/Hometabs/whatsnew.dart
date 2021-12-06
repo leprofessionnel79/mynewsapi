@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:newsapp/api/posts_api.dart';
@@ -15,6 +16,9 @@ PostsAPI postsAPI = PostsAPI();
 int count;
 
 class _WhatsNewState extends State<WhatsNew> {
+
+ 
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -38,10 +42,11 @@ class _WhatsNewState extends State<WhatsNew> {
       fontSize: 18,
     );
 
-    return FutureBuilder(
-      future: postsAPI.fetchPostsByCategoryID("1"),
-      builder: (context, AsyncSnapshot snapShot) {
-        switch (snapShot.connectionState) {
+    return StreamBuilder(
+      stream: postsAPI.stfetchPostsByCategoryID("1"),
+      builder: (context, AsyncSnapshot snapshot) {
+        
+        switch (snapshot.connectionState) {
           case ConnectionState.waiting:
             return loadingcircle();
             break;
@@ -55,16 +60,18 @@ class _WhatsNewState extends State<WhatsNew> {
             break;
 
           case ConnectionState.done:
-            if (snapShot.hasError) {
-              errorinsnap(snapShot.error);
+            if (snapshot.hasError) {
+              errorinsnap(snapshot.error);
             } else {
-              List<Post> posts = snapShot.data;
-              Random random = Random();
-              int randomIndex = random.nextInt(posts.length);
-              randomIndex > 0
-                  ? randomIndex = 1
-                  : randomIndex = random.nextInt(posts.length);
-              Post post = posts[randomIndex];
+              List<Post> posts = snapshot.data;
+
+              // Random random = Random();
+              // int randomIndex = random.nextInt(posts.length);
+              // randomIndex > 0
+              //     ? randomIndex = 4
+              //     : randomIndex = random.nextInt(posts.length);
+              Post post = posts[1];
+              //print(post);
 
               return GestureDetector(
                 onTap: () {
@@ -127,7 +134,8 @@ class _WhatsNewState extends State<WhatsNew> {
             padding: EdgeInsets.all(8.0),
             child: Card(
               child: FutureBuilder(
-                future: postsAPI.fetchPostsByCategoryID('1'),
+                //future
+                future: postsAPI.fetchPostsByCategoryID("1"),
                 builder: (context, AsyncSnapshot snapShot) {
                   switch (snapShot.connectionState) {
                     case ConnectionState.waiting:
@@ -175,8 +183,10 @@ class _WhatsNewState extends State<WhatsNew> {
     List<Post> posts = [];
     return Padding(
       padding: EdgeInsets.all(8),
+      //FutureBuilder
       child: FutureBuilder(
-          future: postsAPI.fetchPostsByCategoryID('4'),
+          // future: postsAPI.fetchPostsByCategoryID('4'),
+          future: postsAPI.fetchPostsByCategoryID("4"),
           builder: (context, AsyncSnapshot snapShot) {
             switch (snapShot.connectionState) {
               case ConnectionState.waiting:
@@ -203,7 +213,7 @@ class _WhatsNewState extends State<WhatsNew> {
                     }
 
                     // change image domain server from localhost to your pc ip
-                    // this make photo appear on image asset 
+                    // this make photo appear on image asset
 
                     return Column(
                       crossAxisAlignment: CrossAxisAlignment.start,

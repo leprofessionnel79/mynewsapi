@@ -33,26 +33,6 @@ class _EntryState extends State<Entry> {
             _currentIndex = index;
           });
 
-          // switch (_currentIndex) {
-          //   case 0:
-          //     return Navigator.push(context,
-          //         MaterialPageRoute(builder: (context) => HomeScreen()));
-          //     break;
-          //   case 1:
-          //     return Navigator.push(context,
-          //         MaterialPageRoute(builder: (context) => HeadNews()));
-          //     break;
-
-          //   case 2:
-          //     return Navigator.push(context,
-          //         MaterialPageRoute(builder: (context) => TwitterFeed()));
-          //     break;
-
-          //    case 3:
-          //     return Navigator.push(context,
-          //         MaterialPageRoute(builder: (context) => InstaGramFeed()));
-          //     break;
-          // }
         },
         items: [
           BottomNavigationBarItem(
